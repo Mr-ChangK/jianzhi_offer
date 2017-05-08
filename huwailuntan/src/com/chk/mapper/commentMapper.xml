@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chk.mapper.CommentMapper">
+	<insert id="saveComment" parameterType="com.chk.model.Comment">
+		insert into comment
+		(userid,content,createtime,objectid) 
+		values(#{userid},#{content},#{createtime},#{objectid})
+	</insert>
+
+	<select id="findComment" resultType="com.chk.model.Comment" >
+		select * from comment where objectid=#{objectid}
+	</select>
+	
+	<select id="findCount" resultType="java.lang.Integer">
+		select count(*) from comment where objectid=#{objectid}
+	</select>
+</mapper>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chk.mapper.ItemMapper">
+	
+	<select id="findByName" parameterType="java.lang.String" resultType="int">
+		select id from item where item=#{item}
+	</select>
+	
+</mapper>
